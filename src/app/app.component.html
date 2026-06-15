@@ -3,19 +3,25 @@
     <h1>🛍️ Shopping store</h1>
   </header>
 
-  <main>
-    <div class="product-card">
-      <div class="container-image">
-        <img src="../assets/img/jacket.jpg" alt="Chaqueta de viento plegable para mujer">
-      </div>
-      
-      <div class="container-detail ">
-        <span class="category">ROPA DE MUJER</span>
-        <h2>Chaqueta de viento plegable impermeable Rainjacket</h2>
-        <p class="description">Chaqueta ligera e impermeable, perfecta para caminatas al aire libre, viajes o uso casual en días lluviosos. Cuenta con capucha ajustable y diseño plegable fácil de transportar.</p>
-        <p class="price">$39.99 USD</p>
-        <button class="add-btn">Añadir al Carrito</button>
-      </div>
-    </div>
-  </main>
+  @if (productList.length > 0) {
+      <main>
+        @for (product of productList; track product.id) {
+          <div class="product-card">
+            <div class="container-image">
+              <img [src]="product.image" [alt]="product.title">
+            </div>
+            
+            <div class="container-detail ">
+              <span class="category">{{product.category}}</span>
+              <h2>{{product.title}}</h2>
+              <p class="description">{{product.description}}</p>
+              <p class="price">{{product.price}}</p>
+              <button class="add-btn">Click to see details</button>
+            </div>
+          </div>
+        }
+    </main>
+  } @else {
+    <p>Loading catalog...</p>
+  }
 </div>
