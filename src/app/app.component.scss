@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 20px;
 }
+
 header {
   text-align: center;
   margin-bottom: 40px;
@@ -11,6 +12,7 @@ header {
   padding: 20px;
   border-radius: 8px;
 }
+
 .product-card {
   display: flex;
   gap: 40px;
@@ -20,11 +22,13 @@ header {
   padding: 30px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
+
 .container-image img {
   max-width: 300px;
   height: auto;
   border-radius: 8px;
 }
+
 .container-detail {
   flex: 1;                 
   display: flex;            
@@ -53,6 +57,7 @@ header {
   font-weight: bold;
   margin: 20px 0;
 }
+
 .add-btn {
   background: #1976d2;
   color: white;
@@ -63,8 +68,10 @@ header {
   cursor: pointer;
   width: 100%;
 }
+
 .loader {
   text-align: center;
   font-size: 1.2rem;
   color: #666;
+  margin-top: 50px;
 }

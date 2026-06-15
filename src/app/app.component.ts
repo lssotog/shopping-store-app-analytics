@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule, NgIf } from "@angular/common";
 import { Product } from './product.model';
 import { ProductService } from './product.service';
+import { AnalyticsService } from './analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { ProductService } from './product.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  private productService = inject(ProductService)
+  private productService = inject(ProductService);
+  private analitycsService = inject(AnalyticsService);
   title = 'shopping-store-analytics-app';
   productList: Product[] = [];
   
@@ -25,5 +27,10 @@ export class AppComponent implements OnInit {
       },
       error: (err) => console.error('Error al cargar el catalogo', err)
     });
+  }
+
+  clickOnCart(product: Product): void {
+    this.analitycsService.sendViewItem(product);
+    alert(`Ir a la pagina del producto: ${product.title}`);
   }
 }

@@ -6,7 +6,7 @@
   @if (productList.length > 0) {
       <main>
         @for (product of productList; track product.id) {
-          <div class="product-card">
+          <div class="product-card" (click)="clickOnCart(product)">
             <div class="container-image">
               <img [src]="product.image" [alt]="product.title">
             </div>
